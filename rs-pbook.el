@@ -77,3 +77,5 @@ for the inspiration."
       (goto-char (point-min))
       (funcall major-mode-function)
       (set-buffer-modified-p nil))))
+
+(provide 'rs-pbook)
