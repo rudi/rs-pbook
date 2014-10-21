@@ -1,0 +1,20 @@
+* Low-cost Literate Programming
+
+I've long been a fan of [[http://discontinuity.info/~pkhuong/pbookc.pdf][pbook]], converts a buffer containing source code into a
+marked-up LaTeX document.  But the implementation was a bit crufty and not
+easy to customize, so I never used it as much as I would have liked.  Recently
+I stumbled upon [http://lukego.github.io/blog/2012/10/24/readable-programs/],
+where Luke replaces the whole program with a sed one-liner.  ~rs-pbook~ is an
+implementation of his approach, surrounding the global search-and-replace with
+a bit of Emacs comfort (auto-handling comment prefixes, making the output
+format extensible, creating a buffer with a proper filename, etc.).
+
+* How to use it
+
+Write your source code as usual, sprinkling it with top-level comments
+beginning in column 0.  These comments will be converted to text, everything
+else becomes code blocks.
+
+~M-x rs-pbook~ creates a buffer in org or markdown format.  Use this to create
+pdf or html, browse on screen, or print it out and read on the bus.  Hope it
+is useful!
