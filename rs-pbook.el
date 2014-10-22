@@ -42,7 +42,8 @@ code blocks."
 Must have an entry in `rs-pbook-markup-languages'."
   :type `(radio ,@(mapcar (lambda (x) (list 'const (car x)))
                           rs-pbook-markup-languages))
-  :safe t)
+  :set-after '(rs-pbook-markup-languages)
+  :safe (lambda (value) (member value (mapcar #'car rs-pbook-markup-languages))))
 
 ;;; * Code
 (defun rs-pbook (flag)
